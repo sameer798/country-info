@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Nunito, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    /* justify-items: center; */
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    /* background-color: aqua; */
+    
+}
+.moon {
+    margin-right: 5px;
+}
+
+
+main {
+    padding: 24px;
+}
+
+
+
+.country-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: space-between;
+    
+}
+.country-card{
+    width: 250px;
+    /* padding-inline: 24px; */
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    padding-bottom: 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+.country-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+.country-card img{
+    width: 100%;
+    height: 170px;
+    object-fit: cover
+}
+
+.card-text {
+    padding-inline: 10px;
+}
+
+.country-title {
+    font-size: 24px;
+    margin-block: 16px;
+}
+
+.card-text p {
+    margin-block: 6px;
+}
+
+.error {
+    text-align: center;
+    font-size: larger;
+    color: red;
+}
+
+@media(max-width: 670px) {
+    .country-container {
+       align-items: center;
+    justify-content: center;
+    }
+
+    .country-card {
+       width: 350px;
+    }
+
+    .header h2 {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 420px){
+    .country-container {
+       align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    }
+
+   
+
+     .country-card {
+       width: 350px;
+    }
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+
+.search-by-name {
+    /* max-width:1000px; */
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.search-by-name i {
+    margin-left: 20px;
+}
+.country-input {
+   padding: 18px;
+   border: none;
+   outline: none;
+}

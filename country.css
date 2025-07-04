@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Nunito, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    /* justify-items: center; */
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    /* background-color: aqua; */
+    
+}
+
+@media(max-width: 670px) {
+    .header h2 {
+        font-size: 18px;
+    }
+}
+
+.back-button {
+    /* margin: 30px; */
+    /* display: block; */
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 8px 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+.back-button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.country-details-container {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.country-details {
+    margin-top: 50px;
+    display: flex;
+    justify-content:flex-start;
+    column-gap: 50px;
+        flex-wrap: wrap;
+    /* align-items: start; */
+}
+
+.flag {
+    width: 40%;
+}
+
+.details-text-container p {
+    margin: unset;
+}
+
+.country-text-container {
+    display: flex;
+    column-gap: 60px;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+}
+
+@media(max-width: 785px) {
+    .flag {
+        width: 60%;
+    }
+    .country-details{
+        /* justify-content:center; */
+        row-gap: 20px;
+    }
+}
+
+@media(max-width: 785px) {
+    .flag {
+        width: 100%;
+    }
+    .country-details{
+        justify-content:center;
+    }
+
+    .country-text-container{
+        row-gap: 30px;
+    }
+}
+
+.border-countries {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.border-countries a {
+    font-weight: 400;
+    border-radius: 4px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 6px 18px;
+    
+    
+    transition: all 0.2s ease-in-out;
+}
+
+.border-countries a:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.error {
+    text-align: center;
+    font-size: larger;
+    color: red;
+}
