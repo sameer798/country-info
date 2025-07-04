@@ -8,7 +8,7 @@ fetch('https://restcountries.com/v3.1/all').then((data)=> data.json())
 .then((country)=>{
     //  https://restcountries.com/v3.1/name/{name}
 
-    // console.log(country[0])
+    console.log(country)
     countriesDetails = country
     renderCountries(country)
     
