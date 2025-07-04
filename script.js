@@ -40,40 +40,71 @@ countryInput.addEventListener('input',(e)=>{
 })
 
 
-function renderCountries(countries){
 
+function renderCountries(countries) {
+  if (Array.isArray(countries)) {
+    countries.forEach((country) => {
+      const a = document.createElement('a');
+      a.href = `./country.html?name=${encodeURIComponent(country.name.common)}`;
 
-    if (Array.isArray(countries)) {
-    countries.forEach((country)=>{
-     const a = document.createElement('a');
+      const newHTML = `
+        <div class="country-card">
+          <div class="country-image-container">
+            <img src="${country.flags.svg}" alt="${country.name.common} flag">
+          </div>
+          <div class="card-text">
+            <h3 class="country-title">${country.name.common}</h3>
+            <p><b>Population: </b>${country.population.toLocaleString()}</p>
+            <p><b>Region: </b>${country.region}</p>
+            <p><b>Capital: </b>${country.capital?.[0] || 'N/A'}</p>
+          </div>
+        </div>
+      `;
 
-     a.href = `./country.html?name=${country.name.common}`
-     
-        const newHTML = `        
-        
-                <div class="country-card">
-                
-                <div class="country-image-container">
-                    <img src=${country.flags.svg} alt="${country.name.common} flag">
-                </div>
-                <div class="card-text">
-                    <h3 class="country-title">${country.name.common}</h3>
-                <p><b>Population: </b>${country.population.toLocaleString()}</p>
-                <p><b>Region: </b>${country.region}</p>
-                <p><b>Capital: </b>${country.capital?.[0]}</p>
-                </div>
-            </div>
-        
-        `
-        a.innerHTML = newHTML
-        countryContainer.append(a)
-    })
-
-} else {
-  console.error("Expected an array but got:", countries);
+      a.innerHTML = newHTML;
+      countryContainer.append(a);
+    });
+  } else {
+    console.error("Something went wrong!!");
+  }
 }
+
+
+
+// function renderCountries(countries){
+
+
+//     if (Array.isArray(countries)) {
+//     countries.forEach((country)=>{
+//      const a = document.createElement('a');
+
+//      a.href = `./country.html?name=${country.name.common}`
+     
+//         const newHTML = `        
+        
+//                 <div class="country-card">
+                
+//                 <div class="country-image-container">
+//                     <img src=${country.flags.svg} alt="${country.name.common} flag">
+//                 </div>
+//                 <div class="card-text">
+//                     <h3 class="country-title">${country.name.common}</h3>
+//                 <p><b>Population: </b>${country.population.toLocaleString()}</p>
+//                 <p><b>Region: </b>${country.region}</p>
+//                 <p><b>Capital: </b>${country.capital?.[0]}</p>
+//                 </div>
+//             </div>
+        
+//         `
+//         a.innerHTML = newHTML
+//         countryContainer.append(a)
+//     })
+
+// } else {
+//   console.error("Something went wrong!!");
+// }
 
 
 
   
-}
+// }
