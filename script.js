@@ -41,6 +41,9 @@ countryInput.addEventListener('input',(e)=>{
 
 
 function renderCountries(countries){
+
+
+    if (Array.isArray(countries)) {
     countries.forEach((country)=>{
      const a = document.createElement('a');
 
@@ -66,4 +69,11 @@ function renderCountries(countries){
         countryContainer.append(a)
     })
 
+} else {
+  console.error("Expected an array but got:", countries);
+}
+
+
+
+  
 }
